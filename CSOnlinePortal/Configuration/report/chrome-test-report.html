@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Protractor HTML Reporter</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css" >
+    <style type="text/css">
+      .panel-heading {
+    padding: 0;
+}
+
+.panel-heading a {
+    padding: 10px 5px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.panel-heading i.glyphicon-chevron-down {
+    display: none;
+}
+
+.panel-heading i.glyphicon-chevron-right {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-down {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-right {
+    display: none;
+}
+
+.info {
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.panel-title b {
+    padding-right: 10px;
+}
+
+.panel-heading .label-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.panel-heading .label-container label {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.navbar .label-container {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar .label {
+    font-size: 20px;
+}
+
+.navbar .project-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -700px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chart {
+    padding-bottom: 15px;
+}
+
+div.chart div div svg rect {
+    fill: #f5f5f5;
+}
+
+table.arguments {
+    margin-left: 30px;
+}
+
+.screenshot {
+    padding: 2% 0 2% 0;
+}
+
+.scenarioTitle {
+    width: 80%
+}
+
+.description {
+    background-color: white;
+    border-color: white;
+    line-height: 1.6;
+    color: #6f6f6f;
+    font-weight: 400;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding:  0.1em 0.5em 1.2em 1.5em
+}
+
+#scenario-description {
+    padding-bottom:  1em;
+    padding-left: 0.2em;
+}
+
+.scrollBar {
+    overflow-x: scroll;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.info {
+    background-color: #fbfbfb;
+}
+
+.step-duration {
+    float: right;
+}
+
+.footer-div {
+    text-align: right;
+    vertical-align: middle;
+    height:3.5%;
+    width:100%;
+}
+
+.footer-container {
+    margin-right: 10px;
+    margin-top: 5px;
+    width:18%;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer-link {
+    font-size: 13px;
+    float: right;
+}
+
+.footer-link:hover {
+    color: darkgray;
+}
+
+    </style>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="project-name visible-md visible-lg">Test Execution Reporting</div>
+          <div class="label-container">
+            <span class="label label-success" title=TestCases>Passed: 21</span>
+            <span class="label label-danger" title=TestCases>Failed: 17</span>
+            <span class="label label-warning" title=TestCases>Skipped: 5</span>
+            <span class="label label-info">Time Elapsed: 0h 9min 52s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+    <!--<div class="generated-on"><b>Platform:</b> </div>-->
+    <div class="info"><b>Browser:</b> chrome 60.0.3112.101</div>
+    <div class="info"><b>Generated on:</b> 2017-8-24 08:26:15</div>
+
+
+      <div class="row">
+        <div class="chart col-lg-6 col-md-6" id="piechart_testsuites"></div>
+        <div class="chart col-lg-6 col-md-6" id="piechart_testcases"></div>
+      </div>
+
+      
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite0">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>chrome.Login - CS Lawyer Portal</font>
+          <span class="label-container">
+            <span class="label label-success">8</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite0" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - Registration status Active - Lawyer</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 16 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - Registration status Active - Lawclerk</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 8 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_2">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - Registration status inctive</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 1 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_3">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - Registration status Declined</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 1 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_4">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - CS and RS Registration status Active for both</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 2 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_5">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - CS and RS Registration status Inactive for both</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 1 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_6">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - CS Registration status Active and RS Inactive</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase0_7">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>1.0 Access CS Lawyer Portal - CS Registration status Inactive and RS Active</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase0_7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 2 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite1">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>chrome.CS Lawyer Portal - My Profile</font>
+          
+          <span class="label-container">
+            <span class="label label-success">8</span>
+            <span class="label label-danger">5</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite1" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>20.0 My Profile – Contact Info - Update profile contact information</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 21 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>US 20.1/MS 1.0/CS Lawyer Portal/User able to access My Profile from CS Lawyer Portal</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_2">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - My Profile US 20.1\MS 1.0\CS Lawyer Portal\User able to access My Profile from CS Lawyer Portal.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer.png" data-lightbox="chrome-CS Lawyer Portal - My Profile US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_3">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 14 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - My Profile US 20.1\MS 2.0\CS Lawyer Portal\My Profile Left Navigation Hyperlinks - CS Only Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer.png" data-lightbox="chrome-CS Lawyer Portal - My Profile US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_4">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 13 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - My Profile US 20.1\MS 3.0\CS Lawyer Portal\My Profile Left Navigation Hyperlinks - CS\RS Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk.png" data-lightbox="chrome-CS Lawyer Portal - My Profile US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 3 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - My Profile US 20.1\MS 4.0\CS Lawyer Portal\My Profile Left Navigation Hyperlinks - CS Only Law Clerk.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk.png" data-lightbox="chrome-CS Lawyer Portal - My Profile US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - My Profile US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>23.0 My Profile – Security Questions - Update profile security questions</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 15 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - My Profile US 20.1\MS 5.0\CS Lawyer Portal\My Profile Left Navigation Hyperlinks - CS\RS Law Clerk.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - My Profile 23.0 My Profile – Security Questions - Update profile security questions.png" data-lightbox="chrome-CS Lawyer Portal - My Profile 23.0 My Profile – Security Questions - Update profile security questions.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - My Profile 23.0 My Profile – Security Questions - Update profile security questions.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - My Profile 23.0 My Profile – Security Questions - Update profile security questions.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_7">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0 My Profile – Change Password - Change FCT portal password for user :AutoCSRSLawyer</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 24 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_8">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0.1 My Profile – Change Password - Change FCT portal password for : AutoCSActRSInact</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_8" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 24 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_9">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_9" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 6 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_10">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_10" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 7 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_11">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_11" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 5 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase1_12">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase1_12" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 5 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite2">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>chrome.Creat New ordar, Submit Order from CS Lawyer Portal and Verify in CUC Portal</font>
+          <span class="label-container">
+            <span class="label label-success">2</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite2" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase2_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Creat New ordar, Submit Order from CS Lawyer Portal</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase2_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 47 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase2_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Verify Created new Order on CUC portal</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase2_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 49 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite3">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>chrome.CS Lawyer Portal - My Profile Delegated Authority</font>
+          <span class="label-container">
+            <span class="label label-success">1</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite3" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase3_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>21.a b c d e My Profile – Add View Enable Disable Delete Delegate Authority</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase3_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 49 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite4">
+          
+            <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+          
+          <font color="green"><b>TestSuite:</b>chrome.Create New order - CS Lawyer Portal</font>
+          <span class="label-container">
+            <span class="label label-success">2</span>
+            
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite4" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Access CS Lawyer Portal - Create New Deal</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 84 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase4_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>Access CS Lawyer Portal - Verify Left menu item for Law clark</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase4_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 8 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite5">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>chrome.CS Lawyer Portal -> New Order – Transaction Details</font>
+          
+          <span class="label-container">
+            
+            <span class="label label-danger">8</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite5" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_0">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>6.2.1 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Lawyer</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 21 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_1">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.2.2 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Law Clerk</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 20 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.1 -> US 6.2\CS Lawyer Portal\Transaction detail conditional rules - Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.2 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Law Clerk.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.2 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Law Clerk.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.2 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Law Clerk.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.2 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Law Clerk.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_2">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>6.2.3 -> US 6.2/CS Lawyer Portal/Transaction detail conditional rules - Import to CUC - Regression</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 1 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_3">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.9.1 ->  US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 1 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.2.2 -> US 6.2\CS Lawyer Portal\Transaction detail conditional rules - Law Clerk.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.1 ->  US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Lawyer.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.1 ->  US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.1 ->  US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.1 ->  US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_4">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.9.2 -> US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Law Clerk</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.1 ->  US 6.9\CS Lawyer Portal\Transaction - Default Values for primary mandatory fields - Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.2 -> US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Law Clerk.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.2 -> US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Law Clerk.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.2 -> US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Law Clerk.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.2 -> US 6.9/CS Lawyer Portal/Transaction - Default Values for primary mandatory fields - Law Clerk.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.10.1 ->  US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.9.2 -> US 6.9\CS Lawyer Portal\Transaction - Default Values for primary mandatory fields - Law Clerk.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.1 ->  US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Lawyer.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.1 ->  US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.1 ->  US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.1 ->  US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.10.2 -> US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Law Clerk</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 9 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.1 ->  US 6.10\CS Lawyer Portal\Transaction – Primary Mandatory Fields - Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.2 -> US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Law Clerk.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.2 -> US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Law Clerk.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.2 -> US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Law Clerk.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.2 -> US 6.10/CS Lawyer Portal/Transaction – Primary Mandatory Fields - Law Clerk.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase5_7">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>6.11 ->  US 6.11/CS Lawyer Portal/Transaction – Secondary Mandatory Fields - Lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase5_7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 12 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.10.2 -> US 6.10\CS Lawyer Portal\Transaction – Primary Mandatory Fields - Law Clerk.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.11 ->  US 6.11/CS Lawyer Portal/Transaction – Secondary Mandatory Fields - Lawyer.png" data-lightbox="chrome-CS Lawyer Portal -> New Order – Transaction Details 6.11 ->  US 6.11/CS Lawyer Portal/Transaction – Secondary Mandatory Fields - Lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.11 ->  US 6.11/CS Lawyer Portal/Transaction – Secondary Mandatory Fields - Lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal -> New Order – Transaction Details 6.11 ->  US 6.11/CS Lawyer Portal/Transaction – Secondary Mandatory Fields - Lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite6">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>chrome.CS Lawyer Portal - Property Details</font>
+          
+          <span class="label-container">
+            <span class="label label-success">-1</span>
+            <span class="label label-danger">3</span>
+            <span class="label label-warning">5</span>
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite6" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_0">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>7.1 Create Property Details with New Order - Mandatory Fields</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_1">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>7.2 Create Property Details with New Order - fill Non - Mandatory Fields</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_2">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>7.3 Create Property Details with New Order - Edit Informations</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_3">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>7.4 Create Property Details with New Order - Erase Informations</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_4">
+                        
+                          <span class="label label-warning"><i class="glyphicon glyphicon-minus"></i></span>
+                        
+
+                        
+                        <font color="orange"><b>TestCase:</b>7.5 Create Property Details with New Order - Verify set of data fields</font>
+                        
+                        <span class="label-container">
+                          
+                          <span class="label label-warning" title="Skipped">Skipped</span>
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_5">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 14 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal -> New Order – Transaction Details 6.11 ->  US 6.11\CS Lawyer Portal\Transaction – Secondary Mandatory Fields - Lawyer.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - Property Details US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection.png" data-lightbox="chrome-CS Lawyer Portal - Property Details US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - Property Details US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - Property Details US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase6_6">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>US 7 Add Multiple property</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase6_6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 29 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Error: ENOENT: no such file or directory, open 'C:\Automation\quickstart-master\CSOnlinePortal\Configuration\report\screenshots\chrome-CS Lawyer Portal - Property Details US 7.2 : 7.2.1 Property detail conditional rules : Verify the display of fields based on selection.png'</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - Property Details US 7 Add Multiple property.png" data-lightbox="chrome-CS Lawyer Portal - Property Details US 7 Add Multiple property.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - Property Details US 7 Add Multiple property.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - Property Details US 7 Add Multiple property.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-11 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapseSuite7">
+          
+            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+          
+          <font color="red"><b>TestSuite:</b>chrome.CS Lawyer Portal - Create Mortgage Details</font>
+          
+          <span class="label-container">
+            <span class="label label-success">1</span>
+            <span class="label label-danger">1</span>
+            
+            
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSuite7" class="panel-collapse collapse">
+            <div class="panel-body">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_0">
+                        
+                          <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        
+
+                        
+                        
+                        <font color="red"><b>TestCase:</b>9.1 Capture Mortgage Details with lawyer</font>
+                        <span class="label-container">
+                          
+                          
+                          <span class="label label-danger" title="Failed">Failed</span>
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 24 seconds</font>
+
+                          
+                            <br />
+                            <span class="label label-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                            <font color="red">Failed: unknown error: Element <button _ngcontent-nus-69="" class="btn btn-box-tool" type="button">...</button> is not clickable at point (1132, 751). Other element would receive the click: <div _ngcontent-nus-85="" class="box-body">...</div>
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.3.9600 x86_64)</font>
+                          
+
+                          
+                            <br />
+                            <span class="label label-primary"><i class="glyphicon glyphicon-camera"></i></span>
+                              Screenshot on failure:
+                            <a class="screenshot" href="screenshots/chrome-CS Lawyer Portal - Create Mortgage Details 9.1 Capture Mortgage Details with lawyer.png" data-lightbox="chrome-CS Lawyer Portal - Create Mortgage Details 9.1 Capture Mortgage Details with lawyer.png">
+                              <img src="screenshots/chrome-CS Lawyer Portal - Create Mortgage Details 9.1 Capture Mortgage Details with lawyer.png" style="width:100%;height:100%" alt="Screenshot not found: screenshots/chrome-CS Lawyer Portal - Create Mortgage Details 9.1 Capture Mortgage Details with lawyer.png"/>
+                            </a>
+                        
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapseTestCase7_1">
+                        
+                          <span class="label label-success"><i class="glyphicon glyphicon-ok"></i></span>
+                        
+
+                        <font color="green"><b>TestCase:</b>9.2 Capture Mortgage Details with for Law clark</font>
+                        
+                        
+                        <span class="label-container">
+                          <span class="label label-success" title="Passed">Passed</span>
+                          
+                          
+                      </a>
+                    </h4>
+                  </div>
+
+                  <div id="collapseTestCase7_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p class="scenario-container">
+                        
+                          <span class="label label-primary" title="Success"><i class="glyphicon glyphicon-time"></i></span>
+                          <font color="black">Time elapsed: 18 seconds</font>
+
+                          
+
+                          
+                      
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              
+            </div>
+      </div>
+
+
+  </div>
+  </div>
+</div>
+
+
+
+    </div>
+
+
+    <div class="navbar-fixed-bottom row-fluid footer-div ">
+      <div class="navbar-inner">
+        <div class="footer-container">
+          <a  target="_blank" href="https://www.npmjs.com/package/protractor-html-reporter">
+            <div class="text-muted footer-link">
+              generated by @protractor-html-reporter
+            </div>
+             </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(function() {drawChart({
+                                                              "title": "TestSuites",
+                                                              "passed": 4,
+                                                              "failed": 4,
+        })
+      });
+      google.charts.setOnLoadCallback(function() {drawChart({
+                                                              "title": "TestCases",
+                                                              "passed": 21,
+                                                              "skipped": 5,
+                                                              "errors": 0,
+                                                              "failed": 17
+        })
+      });
+
+    </script>
+    <script>
+      function drawChart(chartData) {
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Project Results'],
+    ['Passed', chartData.passed],
+    ['Skipped', chartData.skipped],
+    ['Errors', chartData.errors],
+    ['Failed', chartData.failed]
+  ]);
+
+  var testsNumber = chartData.passed + chartData.failed + (chartData.skipped || 0) + (chartData.errors || 0);
+  var title;
+
+  if (testsNumber === 1) {
+    title = testsNumber + ' ' + chartData.title.slice(0, -1);
+  } else {
+    title = testsNumber + ' ' + chartData.title;
+  }
+
+  var options = {
+    width: '100%',
+    height: 270,
+    title: title,
+    is3D: true,
+    fontSize: '12',
+    colors: ['#5cb85c', '#f0ad4e', '#5bc0de', '#d9534f'],
+    pieStartAngle: 100,
+    backgroundColor: 'white',
+    titleTextStyle: {
+      fontSize: '13',
+      color: '#5e5e5e'
+    }
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_' + chartData.title.toLowerCase()));
+  chart.draw(data, options);
+}
+
+    </script>
+
+  </body>
+</html>

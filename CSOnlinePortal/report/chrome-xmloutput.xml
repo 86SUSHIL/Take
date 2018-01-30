@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="chrome.CS Lawyer Portal - My Profile" timestamp="2017-08-21T08:00:20" hostname="localhost" time="158.883" errors="0" tests="13" skipped="0" disabled="0" failures="0">
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="20.0 My Profile – Contact Info - Update profile contact information" time="27.736" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="US 20.1/MS 1.0/CS Lawyer Portal/User able to access My Profile from CS Lawyer Portal" time="12.732" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="US 20.1/MS 2.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Lawyer" time="12.568" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="US 20.1/MS 3.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Lawyer" time="12.676" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="US 20.1/MS 4.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS Only Law Clerk" time="11.748" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="US 20.1/MS 5.0/CS Lawyer Portal/My Profile Left Navigation Hyperlinks - CS/RS Law Clerk" time="1.953" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="23.0 My Profile – Security Questions - Update profile security questions" time="11.583" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0 My Profile – Change Password - Change FCT portal password for user :AutoCSRSLawyer" time="22.386" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0.1 My Profile – Change Password - Change FCT portal password for : AutoCSActRSInact" time="25.207" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct" time="4.822" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct" time="4.284" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct" time="3.989" />
+  <testcase classname="chrome.CS Lawyer Portal - My Profile" name="24.0.2 My Profile – Change Password - Change FCT portal password FOR : AutoCSInactRSAct" time="7.193" />
+ </testsuite>
+</testsuites>
