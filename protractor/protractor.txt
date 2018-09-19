@@ -1,0 +1,8 @@
+https://chercher.tech/protractor/install-protractor
+
+npm install
+
+npm install --save powershell
+$ npm i -S node-powershell
+webDriver-manger update
+webDriver-manger start

@@ -1,0 +1,41 @@
+{
+	"name": "Protractor.Test",
+	"version": "1.0.0",
+	"description": "ProtractorTest",
+	"main": "conf.js",
+	"devDependencies": {
+		"@types/jasmine": "2.5.47",
+		"@types/node": "^6.0.116",
+		"@types/selenium-webdriver": "^2.53.43",
+		"astrolabe": "0.3.6",
+		"exceljs": "^0.2.3",
+		"jasmine": "^3.2.0",
+		"jasmine-allure-reporter": "^0.2.3",
+		"jasmine-reporters": "^2.0.0",
+		"protractor": "~4.0.13",
+		"protractor-jasmine2-html-reporter": "0.0.6",
+		"selenium": "^2.20.0",
+		"ts-node": "^5.0.1",
+		"typescript": "2.3.2",
+		"winston": "1.0.1"
+	},
+	"scripts": {
+		"tsc": "tsc",
+		"powershellLocal": "ts-node powershell-run.ts",
+		"powershell": "ts-node powershell-run.ts --version.chrome=2.29 2.29",
+		"pretest": "npm run tsc",
+		"updateWebDriver": "npm run powershell",
+		"updateWebDriverLocal": "npm run powershellLocal",
+		"updateAndRun": "npm run updateWebDriver && npm test",
+		"updateAndRunLocal": "npm run updateWebDriverLocal && npm test",
+		"test": "protractor dist/conf.js",
+		"prestart": "npm run tsc",
+		"start": "protractor"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"node-powershell": "^3.3.1",
+		"powershell": "^2.3.0"
+	}
+}
